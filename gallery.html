@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View our art - Explore our curated collection of premium Afrocentric digital art and framed wall art.">
+    <meta name="keywords" content="Afrocentric art gallery, digital prints, wall art, African art collection, art gallery">
+    <meta name="author" content="Afrocentric Visions">
+    <meta property="og:title" content="Our Art Gallery - Afrocentric Visions">
+    <meta property="og:description" content="Explore our curated collection of stunning Afrocentric digital art and prints.">
+    <meta property="og:type" content="website">
+    <title>Our Art - Afrocentric Visions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%);
+        }
+        
+        .hero-image {
+            background-image: url('https://images.unsplash.com/photo-1504093376055-b3094b674dcb?w=1600&h=900&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .transition-smooth {
+            transition: all 300ms ease-in-out;
+        }
+        
+        .transition-smooth-500 {
+            transition: all 500ms ease-in-out;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+        
+        .mobile-menu {
+            transition: all 300ms ease-in-out;
+        }
+        
+        .mobile-menu.show {
+            display: block;
+        }
+        
+        .announcement-bar {
+            background: linear-gradient(90deg, #1f2937 0%, #374151 100%);
+        }
+
+        .art-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            background: white;
+            border: 1px solid #e5e7eb;
+        }
+
+        .art-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 500ms ease-in-out;
+        }
+
+        .art-card:hover .art-image {
+            transform: scale(1.05);
+        }
+
+        .art-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 300ms ease-in-out;
+        }
+
+        .art-card:hover .art-overlay {
+            opacity: 1;
+        }
+
+        .filter-btn {
+            transition: all 300ms ease-in-out;
+        }
+
+        .filter-btn.active {
+            background-color: #b45309;
+            color: white;
+        }
+
+        .art-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .art-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+    <!-- Announcement Bar -->
+    <div class="announcement-bar text-white text-center py-2 text-sm">
+        <p class="flex items-center justify-center gap-2">
+            <i class="fas fa-truck"></i>
+            Fast Worldwide Shipping (5 days delivery)
+        </p>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md transition-smooth">
+        <nav class="container mx-auto px-4 py-4 max-w-7xl">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-palette text-2xl text-amber-700"></i>
+                    <span class="text-2xl font-bold text-gray-900 tracking-tight">Afrocentric Visions</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html#home" class="text-gray-700 hover:text-amber-700 transition-smooth font-medium">Home</a>
+                    <a href="index.html#features" class="text-gray-700 hover:text-amber-700 transition-smooth font-medium">Features</a>
+                    <a href="index.html#benefits" class="text-gray-700 hover:text-amber-700 transition-smooth font-medium">Benefits</a>
+                    <a href="index.html#about" class="text-gray-700 hover:text-amber-700 transition-smooth font-medium">About</a>
+                    <a href="gallery.html" class="text-gray-700 hover:text-amber-700 transition-smooth font-medium">Gallery</a>
+                    <a href="index.html#testimonials" class="text-gray-700 hover:text-amber-700 transition-smooth font-medium">Testimonials</a>
+                    <a href="index.html#faq" class="text-gray-700 hover:text-amber-700 transition-smooth font-medium">FAQ</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-amber-700 transition-smooth font-medium">Contact</a>
+                </div>
+
+                <!-- Search and CTA -->
+                <div class="hidden md:flex items-center gap-4">
+                    <div class="relative">
+                        <input type="text" placeholder="Search art..." class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-700 transition-smooth">
+                        <i class="fas fa-search absolute right-3 top-3 text-gray-400"></i>
+                    </div>
+                    <button class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-2 rounded-lg font-semibold transition-smooth hover:scale-105 transform">
+                        Shop Now
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-button md:hidden text-gray-900 text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu hidden md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
+                <a href="index.html#home" class="block py-2 text-gray-700 hover:text-amber-700 transition-smooth font-medium">Home</a>
+                <a href="index.html#features" class="block py-2 text-gray-700 hover:text-amber-700 transition-smooth font-medium">Features</a>
+                <a href="index.html#benefits" class="block py-2 text-gray-700 hover:text-amber-700 transition-smooth font-medium">Benefits</a>
+                <a href="index.html#about" class="block py-2 text-gray-700 hover:text-amber-700 transition-smooth font-medium">About</a>
+                <a href="gallery.html" class="block py-2 text-gray-700 hover:text-amber-700 transition-smooth font-medium">Gallery</a>
+                <a href="index.html#testimonials" class="block py-2 text-gray-700 hover:text-amber-700 transition-smooth font-medium">Testimonials</a>
+                <a href="index.html#faq" class="block py-2 text-gray-700 hover:text-amber-700 transition-smooth font-medium">FAQ</a>
+                <a href="index.html#contact" class="block py-2 text-gray-700 hover:text-amber-700 transition-smooth font-medium">Contact</a>
+                <button class="w-full mt-4 bg-amber-700 hover:bg-amber-800 text-white px-6 py-2 rounded-lg font-semibold transition-smooth hover:scale-105 transform">
+                    Shop Now
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-image relative h-96 flex items-center justify-center overflow-hidden">
+        <div class="gradient-overlay absolute inset-0"></div>
+        <div class="relative z-10 container mx-auto px-4 max-w-4xl text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight leading-tight">
+                Our Art Gallery
+            </h1>
+            <p class="text-lg md:text-xl text-gray-100 leading-relaxed">
+                Explore our curated collection of stunning Afrocentric digital art and prints.
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <!-- Filter Section -->
+            <div class="mb-16">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
+                        Filter by Category
+                    </h2>
+                    <p class="text-gray-600 text-lg">
+                        Browse our collection by style and theme
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <button class="filter-btn active bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold transition-smooth hover:scale-105 transform" data-filter="all">
+                        All Artworks
+                    </button>
+                    <button class="filter-btn bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-semibold transition-smooth hover:scale-105 transform hover:bg-gray-300" data-filter="abstract">
+                        Abstract
+                    </button>
+                    <button class="filter-btn bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-semibold transition-smooth hover:scale-105 transform hover:bg-gray-300" data-filter="portrait">
+                        Portraits
+                    </button>
+                    <button class="filter-btn bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-semibold transition-smooth hover:scale-105 transform hover:bg-gray-300" data-filter="cultural">
+                        Cultural
+                    </button>
+                    <button class="filter-btn bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-semibold transition-smooth hover:scale-105 transform hover:bg-gray-300" data-filter="modern">
+                        Modern
+                    </button>
+                    <button class="filter-btn bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-semibold transition-smooth hover:scale-105 transform hover:bg-gray-300" data-filter="traditional">
+                        Traditional
+                    </button>
+                </div>
+            </div>
+
+            <!-- Art Gallery Grid -->
+            <div class="art-grid">
+                <!-- Art Card 1 -->
+                <div class="art-card hover-lift transition-smooth hover:shadow-xl hover:border-amber-700" data-category="abstract">
+                    <img src="https://images.unsplash.com/photo-1578321272176-b7bac9b2c8f5?w=500&h=500&fit=crop&q=80" alt="Abstract Afrocentric Art 1" class="art-image">
+                    <div class="art-overlay">
+                        <button class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded-lg font-semibold transition-smooth">
+                            <i class="fas fa-eye mr-2"></i>View
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Vibrant Essence</h3>
+                        <p class="text-gray-600 text-sm mb-4">Abstract digital art celebrating African vibrancy and energy</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-amber-700 font-bold">$29.99</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fas fa-star text-amber-700"></i>
+                                <span class="text-sm text-gray-600">(48)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art Card 2 -->
+                <div class="art-card hover-lift transition-smooth hover:shadow-xl hover:border-amber-700" data-category="portrait">
+                    <img src="https://images.unsplash.com/photo-1578926314433-c6c7ccf8c3d0?w=500&h=500&fit=crop&q=80" alt="Portrait Art 1" class="art-image">
+                    <div class="art-overlay">
+                        <button class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded-lg font-semibold transition-smooth">
+                            <i class="fas fa-eye mr-2"></i>View
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Regal Beauty</h3>
+                        <p class="text-gray-600 text-sm mb-4">Portrait celebrating African elegance and grace</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-amber-700 font-bold">$34.99</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fas fa-star text-amber-700"></i>
+                                <span class="text-sm text-gray-600">(62)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art Card 3 -->
+                <div class="art-card hover-lift transition-smooth hover:shadow-xl hover:border-amber-700" data-category="cultural">
+                    <img src="https://images.unsplash.com/photo-1578321272176-b7bac9b2c8f5?w=500&h=500&fit=crop&q=80" alt="Cultural Art 1" class="art-image">
+                    <div class="art-overlay">
+                        <button class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded-lg font-semibold transition-smooth">
+                            <i class="fas fa-eye mr-2"></i>View
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Heritage Roots</h3>
+                        <p class="text-gray-600 text-sm mb-4">Traditional patterns meet modern creativity in this stunning piece</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-amber-700 font-bold">$39.99</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fas fa-star text-amber-700"></i>
+                                <span class="text-sm text-gray-600">(75)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art Card 4 -->
+                <div class="art-card hover-lift transition-smooth hover:shadow-xl hover:border-amber-700" data-category="modern">
+                    <img src="https://images.unsplash.com/photo-1578926314433-c6c7ccf8c3d0?w=500&h=500&fit=crop&q=80" alt="Modern Art 1" class="art-image">
+                    <div class="art-overlay">
+                        <button class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded-lg font-semibold transition-smooth">
+                            <i class="fas fa-eye mr-2"></i>View
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Contemporary Flow</h3>
+                        <p class="text-gray-600 text-sm mb-4">Modern digital expression with African inspirations</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-amber-700 font-bold">$32.99</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fas fa-star text-amber-700"></i>
+                                <span class="text-sm text-gray-600">(54)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art Card 5 -->
+                <div class="art-card hover-lift transition-smooth hover:shadow-xl hover:border-amber-700" data-category="traditional">
+                    <img src="https://images.unsplash.com/photo-1578321272176-b7bac9b2c8f5?w=500&h=500&fit=crop&q=80" alt="Traditional Art 1" class="art-image">
+                    <div class="art-overlay">
+                        <button class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded-lg font-semibold transition-smooth">
+                            <i class="fas fa-eye mr-2"></i>View
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Sacred Geometry</h3>
+                        <p class="text-gray-600 text-sm mb-4">Honoring traditional African geometric patterns and symbolism</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-amber-700 font-bold">$36.99</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fas fa-star text-amber-700"></i>
+                                <span class="text-sm text-gray-600">(68)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art Card 6 -->
+                <div class="art-card hover-lift transition-smooth hover:shadow-xl hover:border-amber-700" data-category="abstract">
+                    <img src="https://images.unsplash.com/photo-1578926314433-c6c7ccf8c3d0?w=500&h=500&fit=crop&q=80" alt="Abstract Art 2" class="art-image">
+                    <div class="art-overlay">
+                        <button class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded-lg font-semibold transition-smooth">
+                            <i class="fas fa-eye mr-2"></i>View
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Chromatic Dreams</h3>
+                        <p class="text-gray-600 text-sm mb-4">Bold colors and dynamic forms in abstract harmony</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-amber-700 font-bold">$31.99</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fas fa-star text-amber-700"></i>
+                                <span class="text-sm text-gray-600">(51)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art Card 7 -->
+                <div class="art-card hover-lift transition-smooth hover:shadow-xl hover:border-amber-700" data-category="portrait">
+                    <img src="https://images.unsplash.com/photo-1578321272176-b7bac9b2c8f5?w=500&h=500&fit=crop&q=80" alt="Portrait Art 2" class="art-image">
+                    <div class="art-overlay">
+                        <button class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded-lg font-semibold transition-smooth">
+                            <i class="fas fa-eye mr-2"></i>View
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Strength & Spirit</h3>
+                        <p class="text-gray-600 text-sm mb-4">Powerful portrait capturing African dignity and strength</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-amber-700 font-bold">$37.99</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fas fa-star text-amber-700"></i>
+                                <span class="text-sm text-gray-600">(71)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art Card 8 -->
+                <div class="art-card hover-lift transition-smooth hover:shadow-xl hover:border-amber-700" data-category="cultural">
+                    <img src="https://images.unsplash.com/photo-1578926314433-c6c7ccf8c3d0?w=500&h=500&fit=crop&q=80" alt="Cultural Art 2" class="art-image">
+                    <div class="art-overlay">
+                        <button class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded-lg font-semibold transition-smooth">
+                            <i class="fas fa-eye mr-2"></i>View
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Unity in Diversity</h3>
+                        <p class="text-gray-600 text-sm mb-4">Celebrating the rich tapestry of African cultures and traditions</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-amber-700 font-bold">$41.99</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fas fa-star text-amber-700"></i>
+                                <span class="text-sm text-gray-600">(83)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art Card 9 -->
+                <div class="art-card hover-lift transition-smooth hover:shadow-xl hover:border-amber-700" data-category="modern">
+                    <img src="https://images.unsplash.com/photo-1578321272176-b7bac9b2c8f5?w=500&h=500&fit=crop&q=80" alt="Modern Art 2" class="art-image">
+                    <div class="art-overlay">
+                        <button class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded-lg font-semibold transition-smooth">
+                            <i class="fas fa-eye mr-2"></i>View
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Digital Fusion</h3>
+                        <p class="text-gray-600 text-sm mb-4">Where tradition meets technology in stunning visual harmony</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-amber-700 font-bold">$33.99</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fas fa-star text-amber-700"></i>
+                                <span class="text-sm text-gray-600">(59)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art Card 10 -->
+                <div class="art-card hover-lift transition-smooth hover:shadow-xl hover:border-amber-700" data-category="traditional">
+                    <img src="https://images.unsplash.com/photo-1578926314433-c6c7ccf8c3d0?w=500&h=500&fit=crop&q=80" alt="Traditional Art 2" class="art-image">
+                    <div class="art-overlay">
+                        <button class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded-lg font-semibold transition-smooth">
+                            <i class="fas fa-eye mr-2"></i>View
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Ancestral Wisdom</h3>
+                        <p class="text-gray-600 text-sm mb-4">Connecting with ancestral heritage through symbolic art</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-amber-700 font-bold">$38.99</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fas fa-star text-amber-700"></i>
+                                <span class="text-sm text-gray-600">(72)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art Card 11 -->
+                <div class="art-card hover-lift transition-smooth hover:shadow-xl hover:border-amber-700" data-category="abstract">
+                    <img src="https://images.unsplash.com/photo-1578926314433-c6c7ccf8c3d0?w=500&h=500&fit=crop&q=80" alt="Abstract Art 3" class="art-image">
+                    <div class="art-overlay">
+                        <button class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded-lg font-semibold transition-smooth">
+                            <i class="fas fa-eye mr-2"></i>View
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Rhythmic Motion</h3>
+                        <p class="text-gray-600 text-sm mb-4">Abstract representation of movement and cultural rhythm</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-amber-700 font-bold">$30.99</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fas fa-star text-amber-700"></i>
+                                <span class="text-sm text-gray-600">(46)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art Card 12 -->
+                <div class="art-card hover-lift transition-smooth hover:shadow-xl hover:border-amber-700" data-category="portrait">
+                    <img src="https://images.unsplash.com/photo-1578321272176-b7bac9b2c8f5?w=500&h=500&fit=crop&q=80" alt="Portrait Art 3" class="art-image">
+                    <div class="art-overlay">
+                        <button class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded-lg font-semibold transition-smooth">
+                            <i class="fas fa-eye mr-2"></i>View
+                        </button>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Golden Reflection</h3>
+                        <p class="text-gray-600 text-sm mb-4">Portrait bathed in warm tones celebrating African beauty</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-amber-700 font-bold">$35.99</span>
+                            <div class="flex items-center gap-1">
+                                <i class="fas fa-star text-amber-700"></i>
+                                <span class="text-sm text-gray-600">(65)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-16">
+                <button class="bg-amber-700 hover:bg-amber-800 text-white px-8 py-4 rounded-lg font-bold text-lg transition-smooth hover:scale-105 transform duration-300 shadow-lg hover:shadow-xl">
+                    <i class="fas fa-plus mr-2"></i>Load More Artworks
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-r from-amber-700 to-orange-600 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1504093376055-b3094b674dcb?w=1600&h=900&fit=crop&q=80'); background-size: cover; background-position: center;"></div>
+        </div>
+        <div class="container mx-auto px-4 max-w-4xl relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+                Find Your Perfect Artwork
+            </h2>
+            <p class="text-xl text-amber-50 mb-8 leading-relaxed max-w-2xl mx-auto">
+                Browse our complete collection and discover the perfect piece to transform your space. Digital prints available for instant download or premium framed options for lasting impact.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white hover:bg-gray-100 text-amber-700 px-8 py-4 rounded-lg font-bold text-lg transition-smooth hover:scale-105 transform duration-300 shadow-lg hover:shadow-xl">
+                    Shop Collection
+                </button>
+                <button class="bg-amber-900 hover:bg-amber-950 text-white px-8 py-4 rounded-lg font-bold text-lg transition-smooth hover:scale-105 transform duration-300 shadow-lg hover:shadow-xl border-2 border-white">
+                    Contact Us
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-24 pb-8">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fas fa-palette text-2xl text-amber-700"></i>
+                        <span class="text-2xl font-bold text-white">Afrocentric Visions</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Celebrating African creativity through a curated collection of premium digital art and framed prints.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-amber-700 rounded-full flex items-center justify-center transition-smooth">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-amber-700 rounded-full flex items-center justify-center transition-smooth">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-amber-700 rounded-full flex items-center justify-center transition-smooth">
+                            <i class="fab fa-twitter text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-amber-700 rounded-full flex items-center justify-center transition-smooth">
+                            <i class="fab fa-pinterest text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html#home" class="text-gray-400 hover:text-amber-700 transition-smooth">Home</a></li>
+                        <li><a href="index.html#features" class="text-gray-400 hover:text-amber-700 transition-smooth">Features</a></li>
+                        <li><a href="index.html#benefits" class="text-gray-400 hover:text-amber-700 transition-smooth">Benefits</a></li>
+                        <li><a href="index.html#about" class="text-gray-400 hover:text-amber-700 transition-smooth">About Us</a></li>
+                        <li><a href="gallery.html" class="text-gray-400 hover:text-amber-700 transition-smooth">Gallery</a></li>
+                        <li><a href="index.html#contact" class="text-gray-400 hover:text-amber-700 transition-smooth">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Collections -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Collections</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-amber-700 transition-smooth">Digital Prints</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-700 transition-smooth">Framed Art</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-700 transition-smooth">Limited Editions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-700 transition-smooth">Artist Collaborations</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-700 transition-smooth">New Releases</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Support & Info</h4>
+                    <ul class="space-y-3">
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-amber-700 transition-smooth">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-gray-400 hover:text-amber-700 transition-smooth">Terms of Service</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-amber-700 transition-smooth">Blog</a></li>
+                        <li><a href="index.html#faq" class="text-gray-400 hover:text-amber-700 transition-smooth">FAQ</a></li>
+                        <li><a href="index.html#contact" class="text-gray-400 hover:text-amber-700 transition-smooth">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h4 class="text-white font-bold mb-4">Policies</h4>
+                        <div class="space-y-3 text-gray-400">
+                            <p class="flex items-center gap-2">
+                                <i class="fas fa-shipping-fast text-amber-700"></i>
+                                Fast Worldwide Shipping (5 days delivery)
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-amber-700"></i>
+                                100% Satisfaction Guarantee - Full refund upon return
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-4">Newsletter</h4>
+                        <p class="text-gray-400 mb-4">Subscribe for exclusive offers and new releases.</p>
+                        <div class="flex gap-2">
+                            <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-amber-700 transition-smooth">
+                            <button class="bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-lg font-semibold transition-smooth">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                    <p class="mb-2">
+                        &copy; <span id="year"></span> Afrocentric Visions. All rights reserved. | 
+                        <a href="privacy.html" class="text-amber-700 hover:text-amber-600 transition-smooth">Privacy Policy</a> | 
+                        <a href="terms.html" class="text-amber-700 hover:text-amber-600 transition-smooth">Terms of Service</a>
+                    </p>
+                    <p class="text-sm">
+                        Designed with <i class="fas fa-heart text-red-500"></i> to celebrate African creativity and excellence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('show');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('show');
+            });
+        });
+
+        // Gallery Filter Functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const artCards = document.querySelectorAll('.art-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const filterValue = this.getAttribute('data-filter');
+
+                // Update active button
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active', 'bg-amber-700', 'text-white');
+                    btn.classList.add('bg-gray-200', 'text-gray-900');
+                });
+                this.classList.add('active', 'bg-amber-700', 'text-white');
+                this.classList.remove('bg-gray-200', 'text-gray-900');
+
+                // Filter cards
+                artCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    
+                    if (filterValue === 'all' || cardCategory === filterValue) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Add smooth transitions to cards
+        artCards.forEach(card => {
+            card.style.transition = 'all 300ms ease-in-out';
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.hover-lift').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 600ms ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
