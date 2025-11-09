@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Afrocentric Visions - A curated collection of premium digital art prints and framed wall art celebrating African creativity and culture.">
+    <meta name="keywords" content="Afrocentric art, digital prints, wall art, African culture, digital art collection">
+    <meta name="author" content="Afrocentric Visions">
+    <meta property="og:title" content="Afrocentric Visions: A Digital Art Collection">
+    <meta property="og:description" content="Immerse yourself in a curated gallery of stunning Afrocentric digital art and prints.">
+    <meta property="og:type" content="website">
+    <title>Afrocentric Visions: A Digital Art Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%);
+        }
+        
+        .hero-image {
+            background-image: url('https://images.unsplash.com/photo-1504093376055-b3094b674dcb?w=1600&h=900&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .transition-smooth {
+            transition: all 300ms ease-in-out;
+        }
+        
+        .transition-smooth-500 {
+            transition: all 500ms ease-in-out;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #e5e7eb;
+            transition: all 300ms ease-in-out;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            opacity: 1;
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 300ms ease-in-out;
+        }
+        
+        .mobile-menu {
+            transition: all 300ms ease-in-out;
+        }
+        
+        .mobile-menu.show {
+            display: block;
+        }
+        
+        .announcement-bar {
+            background: linear-gradient(90deg, #1f2937 0%, #374151 100%);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+    <!-- Announcement Bar -->
+    <div class="announcement-bar text-white text-center py-2 text-sm">
+        <p class="flex items-center justify-center gap-2">
+            <i class="fas fa-truck"></i>
+            Fast Worldwide Shipping (5 days delivery)
+        </p>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md transition-smooth">
+        <nav class="container mx-auto px-4 py-4 max-w-7xl">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-palette text-2xl text-amber-700"></i>
+                    <span class="text-2xl font-bold text-gray-900 tracking-tight">Afrocentric Visions</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="text-gray-700 hover:text-amber-700 transition-smooth font-medium">Home</a>
+                    <a href="#features" class="text-gray-700 hover:text-amber-700 transition-smooth font-medium">Features</a>
+                    <a href="#benefits" class="text-gray-700 hover:text-amber-700 transition-smooth font-medium">Benefits</a>
+                    <a href="#about" class="text-gray-700 hover:text-amber-700 transition-smooth font-medium">About</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-amber-700 transition-smooth font-medium">Testimonials</a>
+                    <a href="#faq" class="text-gray-700 hover:text-amber-700 transition-smooth font-medium">FAQ</a>
+                    <a href="#contact" class="text-gray-700 hover:text-amber-700 transition-smooth font-medium">Contact</a>
+                </div>
+
+                <!-- Search and CTA -->
+                <div class="hidden md:flex items-center gap-4">
+                    <div class="relative">
+                        <input type="text" placeholder="Search art..." class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-700 transition-smooth">
+                        <i class="fas fa-search absolute right-3 top-3 text-gray-400"></i>
+                    </div>
+                    <button class="bg-amber-700 hover:bg-amber-800 text-white px-6 py-2 rounded-lg font-semibold transition-smooth hover:scale-105 transform">
+                        Shop Now
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-button md:hidden text-gray-900 text-2xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu hidden md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-amber-700 transition-smooth font-medium">Home</a>
+                <a href="#features" class="block py-2 text-gray-700 hover:text-amber-700 transition-smooth font-medium">Features</a>
+                <a href="#benefits" class="block py-2 text-gray-700 hover:text-amber-700 transition-smooth font-medium">Benefits</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-amber-700 transition-smooth font-medium">About</a>
+                <a href="#testimonials" class="block py-2 text-gray-700 hover:text-amber-700 transition-smooth font-medium">Testimonials</a>
+                <a href="#faq" class="block py-2 text-gray-700 hover:text-amber-700 transition-smooth font-medium">FAQ</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-amber-700 transition-smooth font-medium">Contact</a>
+                <button class="w-full mt-4 bg-amber-700 hover:bg-amber-800 text-white px-6 py-2 rounded-lg font-semibold transition-smooth hover:scale-105 transform">
+                    Shop Now
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-image relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="gradient-overlay absolute inset-0"></div>
+        <div class="relative z-10 container mx-auto px-4 max-w-4xl text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
+                Afrocentric Visions: A Digital Art Collection
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-100 mb-8 leading-relaxed">
+                Immerse yourself in a curated gallery of stunning Afrocentric digital art that celebrates culture, creativity, and connection.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-amber-700 hover:bg-amber-800 text-white px-8 py-4 rounded-lg font-bold text-lg transition-smooth hover:scale-105 transform duration-300 shadow-lg hover:shadow-xl">
+                    Explore Collection
+                </button>
+                <button class="bg-white hover:bg-gray-100 text-amber-700 px-8 py-4 rounded-lg font-bold text-lg transition-smooth hover:scale-105 transform duration-300 shadow-lg hover:shadow-xl">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-white">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+                    Premium Digital Art Features
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Discover what makes our Afrocentric art collection exceptional and perfect for your space.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1: Digital Prints -->
+                <div class="bg-white border border-gray-200 rounded-xl p-8 transition-smooth hover-lift hover:shadow-xl hover:border-amber-700">
+                    <div class="bg-amber-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-image text-amber-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Digital Prints</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        High-resolution digital artwork available for instant download. Perfect for personal projects, presentations, and creative endeavors.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-amber-700"></i>
+                            4K Resolution
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-amber-700"></i>
+                            Multiple Formats
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-amber-700"></i>
+                            Instant Access
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2: Downloadable -->
+                <div class="bg-white border border-gray-200 rounded-xl p-8 transition-smooth hover-lift hover:shadow-xl hover:border-amber-700">
+                    <div class="bg-amber-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-download text-amber-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Downloadable Content</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Instant digital delivery with lifetime access to your purchased artwork. Download anytime, anywhere, on any device.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-amber-700"></i>
+                            Lifetime Access
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-amber-700"></i>
+                            No Expiration
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-amber-700"></i>
+                            Cloud Storage
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3: Framed Wall Art -->
+                <div class="bg-white border border-gray-200 rounded-xl p-8 transition-smooth hover-lift hover:shadow-xl hover:border-amber-700">
+                    <div class="bg-amber-100 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-frame text-amber-700 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Framed Wall Art</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Premium printed and framed artwork ready to hang. Museum-quality materials and professional framing for lasting beauty.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-amber-700"></i>
+                            Museum Quality
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-amber-700"></i>
+                            Ready to Hang
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-amber-700"></i>
+                            Premium Materials
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+                    Transform Your Space
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Discover how Afrocentric art elevates your environment and celebrates cultural excellence.
+                </p>
+            </div>
+
+            <!-- Benefit 1 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg mb-12 transition-smooth hover:shadow-xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                    <div class="h-96 md:h-auto md:order-2">
+                        <img src="https://images.unsplash.com/photo-1556740714-a8395b3bf30f?w=800&h=600&fit=crop&q=80" alt="Transforming digital spaces with Afrocentric creativity" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-12 md:p-16 flex flex-col justify-center md:order-1">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">Transforming Digital Spaces</h3>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                            Elevate your digital environments with authentic Afrocentric creativity. Our curated collection brings cultural richness and artistic excellence to your home office, creative studio, or personal workspace. Each piece is carefully selected to inspire, motivate, and celebrate the beauty of African heritage and contemporary artistry.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-star text-amber-700 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Authentic Cultural Expression</h4>
+                                    <p class="text-gray-600 text-sm">Genuine representation of African artistic traditions and modern creativity</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-star text-amber-700 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Artistic Excellence</h4>
+                                    <p class="text-gray-600 text-sm">Professionally curated pieces from talented Afrocentric artists</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefit 2 -->
+            <div class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg mb-12 transition-smooth hover:shadow-xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                    <div class="h-96 md:h-auto">
+                        <img src="https://images.unsplash.com/photo-1502982720700-bfff97f2ecac?w=800&h=600&fit=crop&q=80" alt="Celebrating African heritage and culture" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-12 md:p-16 flex flex-col justify-center">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">Celebrating Heritage & Culture</h3>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                            Our collection honors the rich tapestry of African culture, history, and contemporary creativity. Every artwork tells a story, celebrates achievements, and showcases the incredible diversity of Afrocentric artistic expression. Support emerging and established artists while bringing meaningful cultural representation into your life.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-heart text-amber-700 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Support Artists</h4>
+                                    <p class="text-gray-600 text-sm">Direct support for talented Afrocentric creators and visionaries</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-heart text-amber-700 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Cultural Pride</h4>
+                                    <p class="text-gray-600 text-sm">Display meaningful art that celebrates identity and heritage</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefit 3 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-lg transition-smooth hover:shadow-xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                    <div class="h-96 md:h-auto md:order-2">
+                        <img src="https://images.unsplash.com/photo-1471341971476-ae15ff5dd4ea?w=800&h=600&fit=crop&q=80" alt="Premium quality art for lasting impact" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-12 md:p-16 flex flex-col justify-center md:order-1">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">Premium Quality & Lasting Value</h3>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                            Invest in art that stands the test of time. Our digital prints use archival-quality materials, and our framed pieces feature museum-grade construction. Whether you choose downloadable digital art or premium framed prints, you're receiving exceptional quality that maintains its beauty and value for years to come.
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-award text-amber-700 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Archival Quality</h4>
+                                    <p class="text-gray-600 text-sm">Materials designed to preserve artwork for decades</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <i class="fas fa-award text-amber-700 text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Investment Grade</h4>
+                                    <p class="text-gray-600 text-sm">Art that appreciates in value and cultural significance</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+                    About Afrocentric Visions
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Celebrating African creativity and cultural excellence through curated digital art.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+                <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 md:p-12">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                        <i class="fas fa-history text-amber-700"></i>
+                        Our Story
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Afrocentric Visions was founded with a singular vision: to create a platform that celebrates and amplifies authentic African artistic expression in the digital age. Starting as a passion project by a collective of artists, curators, and cultural enthusiasts, we've grown into a thriving community dedicated to bringing exceptional Afrocentric art to homes, offices, and creative spaces worldwide. Our journey began with a recognition that African and diaspora artists deserved greater visibility and accessibility, and we've committed ourselves to making that vision a reality through carefully curated collections and direct artist partnerships.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 md:p-12">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                        <i class="fas fa-compass text-amber-700"></i>
+                        Our Mission
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        We are committed to transforming how the world experiences and values Afrocentric art. Our mission is to create meaningful connections between talented artists and art enthusiasts, while celebrating the richness of African heritage, culture, and contemporary creativity. We believe in the power of art to inspire, educate, and unite communities. Every piece in our collection is thoughtfully selected to represent authentic cultural expression, artistic excellence, and the diverse voices of Africa and its diaspora. We stand for inclusivity, authenticity, and the transformative power of creative vision.
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-amber-700 text-white rounded-2xl p-12 text-center">
+                <h3 class="text-2xl font-bold mb-4">Our Core Values</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mt-8">
+                    <div>
+                        <i class="fas fa-palette text-4xl mb-4"></i>
+                        <h4 class="font-bold mb-2">Authenticity</h4>
+                        <p class="text-amber-100">Genuine representation of African artistic traditions</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-users text-4xl mb-4"></i>
+                        <h4 class="font-bold mb-2">Community</h4>
+                        <p class="text-amber-100">Supporting artists and building cultural connections</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-star text-4xl mb-4"></i>
+                        <h4 class="font-bold mb-2">Excellence</h4>
+                        <p class="text-amber-100">Curating only the finest artistic work</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-globe text-4xl mb-4"></i>
+                        <h4 class="font-bold mb-2">Accessibility</h4>
+                        <p class="text-amber-100">Making premium art available to everyone</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+                    Loved by Our Community
+                </h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Hear from collectors and art enthusiasts who have transformed their spaces with Afrocentric Visions.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-xl p-8 shadow-md transition-smooth hover-lift hover:shadow-lg border border-gray-200">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-amber-700"></i>
+                        <i class="fas fa-star text-amber-700"></i>
+                        <i class="fas fa-star text-amber-700"></i>
+                        <i class="fas fa-star text-amber-700"></i>
+                        <i class="fas fa-star text-amber-700"></i>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                        "The digital prints I purchased have completely transformed my home office. The quality is exceptional, and the artwork truly celebrates African excellence. I've downloaded multiple pieces and they all arrived instantly. This collection is authentic, inspiring, and I'm proud to display these works in my space. Highly recommend!"
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center text-white font-bold">
+                            AK
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-900">Amara Kwame</p>
+                            <p class="text-sm text-gray-600">Interior Designer, Lagos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-xl p-8 shadow-md transition-smooth hover-lift hover:shadow-lg border border-gray-200">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-amber-700"></i>
+                        <i class="fas fa-star text-amber-700"></i>
+                        <i class="fas fa-star text-amber-700"></i>
+                        <i class="fas fa-star text-amber-700"></i>
+                        <i class="fas fa-star text-amber-700"></i>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                        "I ordered three framed pieces for my corporate office, and they arrived beautifully packaged and ready to hang. The museum-quality framing is evident, and my clients consistently ask about the artwork. These pieces have become conversation starters and really showcase cultural pride. Worth every penny!"
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center text-white font-bold">
+                            TC
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-900">Tunde Okonkwo</p>
+                            <p class="text-sm text-gray-600">Business Executive, New York</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-xl p-8 shadow-md transition-smooth hover-lift hover:shadow-lg border border-gray-200">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-amber-700"></i>
+                        <i class="fas fa-star text-amber-700"></i>
+                        <i class="fas fa-star text-amber-700"></i>
+                        <i class="fas fa-star text-amber-700"></i>
+                        <i class="fas fa-star text-amber-700"></i>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                        "As an artist myself, I'm impressed by the curation and quality of work in this collection. The digital prints are perfect for my creative projects, and the instant download feature saves me so much time. I've recommended Afrocentric Visions to all my creative friends. This is the platform African artists deserve!"
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center text-white font-bold">
+                            ZM
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-900">Zainab Mohamed</p>
+                            <p class="text-sm text-gray-600">Graphic Designer, London</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="bg-white rounded-xl p-8 shadow-md transition-smooth hover-lift hover:shadow-lg border border-gray-200">
+                    <div class="flex items-center gap-1 mb-4">
+                        <i class="fas fa-star text-amber-700"></i>
+                        <i class="fas fa-star text-amber-700"></i>
+                        <i class="fas fa-star text-amber-700"></i>
+                        <i class="fas fa-star text-amber-700"></i>
+                        <i class="fas fa-star text-amber-700"></i>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-6 text-lg">
+                        "I purchased the collection as gifts for family members, and everyone loved them. The artwork is meaningful, beautiful, and celebrates our heritage in such a powerful way. The customer service was outstanding, delivery was fast, and the satisfaction guarantee gave me complete peace of mind. Truly exceptional!"
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center text-white font-bold">
+                            NK
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-900">Nadia Kourouma</p>
+                            <p class="text-sm text-gray-600">Teacher, Atlanta</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Find answers to common questions about our art collection and services.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-toggle w-full text-left py-6 px-6 bg-gray-50 hover:bg-gray-100 rounded-lg transition-smooth flex items-center justify-between font-semibold text-lg text-gray-900">
+                        <span>What file formats are available for digital prints?</span>
+                        <i class="fas fa-chevron-down text-amber-700"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-700 leading-relaxed">
+                            Our digital prints are available in multiple formats including high-resolution JPG, PNG, and PDF files. Each format is optimized for different uses - JPG for web and social media, PNG for graphics with transparency, and PDF for professional printing. All files are provided at 4K resolution (3840 x 2160 pixels) or higher, ensuring exceptional print quality up to 36x24 inches. When you purchase a digital print, you'll receive download links for all available formats, giving you complete flexibility for your project needs.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-toggle w-full text-left py-6 px-6 bg-gray-50 hover:bg-gray-100 rounded-lg transition-smooth flex items-center justify-between font-semibold text-lg text-gray-900">
+                        <span>How long does shipping take for framed wall art?</span>
+                        <i class="fas fa-chevron-down text-amber-700"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-700 leading-relaxed">
+                            We offer fast worldwide shipping with an average delivery time of 5 business days. Orders are carefully packaged to ensure your framed artwork arrives in perfect condition. Once your order is placed, you'll receive a tracking number within 24 hours so you can monitor your shipment. For expedited delivery options, please contact our customer service team at 1stdigitalartistry@gmail.com. We also offer free shipping on orders over $200 to most countries. All framed pieces are insured during transit for complete peace of mind.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-toggle w-full text-left py-6 px-6 bg-gray-50 hover:bg-gray-100 rounded-lg transition-smooth flex items-center justify-between font-semibold text-lg text-gray-900">
+                        <span>What is your satisfaction guarantee policy?</span>
+                        <i class="fas fa-chevron-down text-amber-700"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-700 leading-relaxed">
+                            We stand behind every product with our 100% Satisfaction Guarantee. If you're not completely satisfied with your purchase for any reason, we offer a full refund within 30 days of purchase. For digital prints, simply let us know within 30 days and we'll process your refund immediately. For framed artwork, we accept returns within 30 days if the piece arrives damaged or doesn't meet your expectations - we'll arrange return shipping and provide a full refund or replacement at no cost. Your satisfaction is our top priority, and we want you to love your Afrocentric art!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-toggle w-full text-left py-6 px-6 bg-gray-50 hover:bg-gray-100 rounded-lg transition-smooth flex items-center justify-between font-semibold text-lg text-gray-900">
+                        <span>Can I use digital prints for commercial purposes?</span>
+                        <i class="fas fa-chevron-down text-amber-700"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6">
+                        <p class="text-gray-700 leading-relaxed">
+                            Digital prints purchased from Afrocentric Visions are licensed for personal use. Commercial licenses are available for businesses, agencies, and organizations that wish to use our artwork in commercial projects, products, or services. If you're interested in commercial licensing, please contact us at 1stdigitalartistry@gmail.com with details about your intended use. We offer flexible commercial licensing options with competitive pricing. We also work with businesses for custom collections and bulk orders. Our team will be happy to discuss licensing terms that work for your specific needs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-r from-amber-700 to-orange-600 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: url('https://images.unsplash.com/photo-1504093376055-b3094b674dcb?w=1600&h=900&fit=crop&q=80'); background-size: cover; background-position: center;"></div>
+        </div>
+        <div class="container mx-auto px-4 max-w-4xl relative z-10 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+                Ready to Transform Your Space?
+            </h2>
+            <p class="text-xl text-amber-50 mb-8 leading-relaxed max-w-2xl mx-auto">
+                Explore our complete collection of Afrocentric digital art and discover pieces that celebrate culture, creativity, and excellence. Start your journey today.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white hover:bg-gray-100 text-amber-700 px-8 py-4 rounded-lg font-bold text-lg transition-smooth hover:scale-105 transform duration-300 shadow-lg hover:shadow-xl">
+                    Shop Collection
+                </button>
+                <button class="bg-amber-900 hover:bg-amber-950 text-white px-8 py-4 rounded-lg font-bold text-lg transition-smooth hover:scale-105 transform duration-300 shadow-lg hover:shadow-xl border-2 border-white">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+                    Get in Touch
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Have questions? We'd love to hear from you. Reach out anytime.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-amber-700 text-white">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Email</h3>
+                            <p class="mt-2 text-gray-600">
+                                <a href="mailto:1stdigitalartistry@gmail.com" class="text-amber-700 hover:text-amber-800 transition-smooth font-semibold">
+                                    1stdigitalartistry@gmail.com
+                                </a>
+                            </p>
+                            <p class="text-sm text-gray-500 mt-1">We typically respond within 24 hours</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-amber-700 text-white">
+                                <i class="fas fa-clock text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Business Hours</h3>
+                            <p class="mt-2 text-gray-600">
+                                Monday - Friday: 9:00 AM - 6:00 PM EST<br>
+                                Saturday - Sunday: 10:00 AM - 4:00 PM EST
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-amber-700 text-white">
+                                <i class="fas fa-globe text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900">Worldwide Shipping</h3>
+                            <p class="mt-2 text-gray-600">
+                                We ship to over 150 countries with fast, reliable delivery.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white rounded-xl p-8 shadow-lg">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-gray-900 mb-2">Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-700 focus:ring-2 focus:ring-amber-200 transition-smooth" placeholder="Your name" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-900 mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-700 focus:ring-2 focus:ring-amber-200 transition-smooth" placeholder="your@email.com" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-gray-900 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-amber-700 focus:ring-2 focus:ring-amber-200 transition-smooth resize-none" placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded-lg font-semibold transition-smooth hover:scale-105 transform duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-24 pb-8">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fas fa-palette text-2xl text-amber-700"></i>
+                        <span class="text-2xl font-bold text-white">Afrocentric Visions</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        Celebrating African creativity through a curated collection of premium digital art and framed prints.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-amber-700 rounded-full flex items-center justify-center transition-smooth">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-amber-700 rounded-full flex items-center justify-center transition-smooth">
+                            <i class="fab fa-instagram text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-amber-700 rounded-full flex items-center justify-center transition-smooth">
+                            <i class="fab fa-twitter text-white"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 hover:bg-amber-700 rounded-full flex items-center justify-center transition-smooth">
+                            <i class="fab fa-pinterest text-white"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-amber-700 transition-smooth">Home</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-amber-700 transition-smooth">Features</a></li>
+                        <li><a href="#benefits" class="text-gray-400 hover:text-amber-700 transition-smooth">Benefits</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-amber-700 transition-smooth">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-amber-700 transition-smooth">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Collections -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Collections</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-amber-700 transition-smooth">Digital Prints</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-700 transition-smooth">Framed Art</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-700 transition-smooth">Limited Editions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-700 transition-smooth">Artist Collaborations</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-700 transition-smooth">New Releases</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Support & Info</h4>
+                    <ul class="space-y-3">
+                        <li><a href="privacy.html" class="text-gray-400 hover:text-amber-700 transition-smooth">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-gray-400 hover:text-amber-700 transition-smooth">Terms of Service</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-amber-700 transition-smooth">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-700 transition-smooth">FAQ</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-amber-700 transition-smooth">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h4 class="text-white font-bold mb-4">Policies</h4>
+                        <div class="space-y-3 text-gray-400">
+                            <p class="flex items-center gap-2">
+                                <i class="fas fa-shipping-fast text-amber-700"></i>
+                                Fast Worldwide Shipping (5 days delivery)
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-amber-700"></i>
+                                100% Satisfaction Guarantee - Full refund upon return
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold mb-4">Newsletter</h4>
+                        <p class="text-gray-400 mb-4">Subscribe for exclusive offers and new releases.</p>
+                        <div class="flex gap-2">
+                            <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-amber-700 transition-smooth">
+                            <button class="bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-lg font-semibold transition-smooth">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                    <p class="mb-2">
+                        &copy; <span id="year"></span> Afrocentric Visions. All rights reserved. | 
+                        <a href="privacy.html" class="text-amber-700 hover:text-amber-600 transition-smooth">Privacy Policy</a> | 
+                        <a href="terms.html" class="text-amber-700 hover:text-amber-600 transition-smooth">Terms of Service</a>
+                    </p>
+                    <p class="text-sm">
+                        Designed with <i class="fas fa-heart text-red-500"></i> to celebrate African creativity and excellence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('show');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('show');
+            });
+        });
+
+        // FAQ Accordion functionality
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const faqItem = this.closest('.faq-item');
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-toggle i').style.transform = 'rotate(0deg)';
+                });
+
+                // Toggle current FAQ item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    this.querySelector('i').style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.hover-lift').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 600ms ease-out';
+            observer.observe(el);
+        });
+
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+        }
+
+        // Add hover effect to FAQ items
+        document.querySelectorAll('.faq-toggle').forEach(toggle => {
+            toggle.addEventListener('mouseenter', function() {
+                this.parentElement.style.backgroundColor = '#f3f4f6';
+            });
+            toggle.addEventListener('mouseleave', function() {
+                if (!this.parentElement.classList.contains('active')) {
+                    this.parentElement.style.backgroundColor = '#f9fafb';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
